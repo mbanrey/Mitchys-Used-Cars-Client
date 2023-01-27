@@ -6,8 +6,10 @@ const messageContainer = document.querySelector('#message-container')
 const showCarContainer = document.querySelector('#show-car-container')
 const showDescriptionContainer = document.querySelector('#show-description-container')
 const authContainer = document.querySelector('#auth-container')
-const indexContainer = document.querySelector('index-container')
+const indexContainer = document.querySelector('#index-container')
+ 
 
+authContainer.classList.remove('hide')
 
 export const onIndexCarSuccess = (car) => {
     car.forEach(car =>{
@@ -58,7 +60,7 @@ export const onShowCarSuccess = (car) => {
         <p>${car.class}</p>
         <p>${car.drive}</p>
         <p>${car.miles}</p>
-        <p>${car.description}
+        <p>${car.description[0].content}</p>
         <p>${car._id}</p>
 
         <form data-id="${car._id}">
@@ -74,25 +76,25 @@ export const onShowCarSuccess = (car) => {
         <button type="button" data-id="${car._id}">Delete Car</button>
     `
     // indexDescriptionContainer.classList.add('hide')
-    // indexCarContainer.classList.add('hide')
+    indexCarContainer.classList.add('hide')
     showCarContainer.appendChild(div)
 }
 
 export const onShowDescriptionSuccess = (description) => {
     const div = document.createElement('div')
     div.innerHTML = `
-        <h3>${description.title}</h3>
+        <h3>${description.content}</h3>
         <p>${description._id}</p>
         
         <form data-id="${description._id}">
-            <input type="text" name="name" value="${description.name}" />
+            <input type="text" name="content" value="${description.content}" />
             <input type="submit" value="Update Description" id="update"/>
         </form>
 
         <button type="button" data-id="${description._id}">Delete Description</button>
     `
     // indexDescriptionContainer.classList.add('hide')
-    // indexCarContainer.classList.add('hide')
+    indexCarContainer.classList.add('hide')
     showDescriptionContainer.appendChild(div)
 }
 

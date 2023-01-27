@@ -66,9 +66,9 @@ h3{
 #create:hover{
     background-color: black;
 }
-/* .hide{
+.hide{
     display:none;
-} */
+}
 #create2{
     width: fit-content;
     border: none;

@@ -38,10 +38,15 @@ const descriptionCreateButton = document.querySelector('.createDescriptionHide')
 const carCreateButton = document.querySelector('.createCarHide')
 const signUpContainer = document.querySelector('#sign-up-form-container')
 const signInContainer = document.querySelector('#sign-in-form-container')
+const authContainer = document.querySelector('#auth-container')
 
 
-// indexDescriptionContainer.classList.remove('hide')
-// indexCarContainer.classList.remove('hide')
+// authContainer.classList.remove('hide')
+// // indexDescriptionContainer.classList.remove('hide')
+indexCarContainer.classList.remove('hide')
+// signInContainer.classList.remove('hide')
+// signUpContainer.classList.remove('hide')
+
 signUpContainer.addEventListener('submit', (event) => {
 	event.preventDefault()
 	const userData = {
@@ -93,9 +98,9 @@ signInContainer.addEventListener('submit', (event) => {
 
 			createDescriptionForm.classList.remove('hide')
 		)
-		indexDescriptionContainer.classList.add('hide')
-		indexCarContainer.classList.add('hide')
-		createCarForm.classList.add('hide')
+		// indexDescriptionContainer.classList.add('hide')
+		// indexCarContainer.classList.add('hide')
+		// createCarForm.classList.add('hide')
 
 	})
 
@@ -104,9 +109,9 @@ signInContainer.addEventListener('submit', (event) => {
 			createCarForm.classList.remove('hide')
 			
 		)
-		indexDescriptionContainer.classList.add('hide')
+		// indexDescriptionContainer.classList.add('hide')
 		indexCarContainer.classList.add('hide')
-		createDescriptionForm.classList.add('hide')
+		// createDescriptionForm.classList.add('hide')
 
 	})
 
@@ -121,7 +126,6 @@ createCarForm.addEventListener('submit', (event) =>{
             class: event.target['class'].value,
             drive: event.target['drive'].value,
 			miles: event.target['miles'].value,
-			// description: event.target['description'].value,
         },
     }
    createCar(carData)
@@ -134,9 +138,9 @@ createDescriptionForm.addEventListener('submit', (event)=>{
 
 	const descriptionData = {
 		description:{
-			title: event.target['title'].value,
+			// title: event.target['title'].value,
 			content: event.target['content'].value,
-			owner: event.target['owner'].vlaue,
+			// owner: event.target['owner'].vlaue,
 		},
 	}
 	createDescription(descriptionData)
@@ -155,16 +159,16 @@ indexCarContainer.addEventListener('click', (event) =>{
         .catch(onFailure)
 })
 
-indexDescriptionContainer.addEventListener('click',(event)=>{
-	const id = event.target.getAttribute('data-id')
+// indexDescriptionContainer.addEventListener('click',(event)=>{
+// 	const id = event.target.getAttribute('data-id')
 
-	if(!id) return
+// 	if(!id) return
 
-	showDescription(id)
-		.then((res)=> res.json())
-		.then((res)=>onShowDescriptionSuccess(res.description))
-		.catch(onFailure)
-})
+// 	showDescription(id)
+// 		.then((res)=> res.json())
+// 		.then((res)=>onShowDescriptionSuccess(res.description))
+// 		.catch(onFailure)
+// })
 
 showCarContainer.addEventListener('submit', (event) => {
 	event.preventDefault()
@@ -178,7 +182,7 @@ showCarContainer.addEventListener('submit', (event) => {
 			class: event.target['class'].value,
 			drive: event.target['drive'].value,
 			miles: event.target['miles'].value,
-			description: event.target['description'],
+			description: event.target['description'].value,
 		},
 	}
 
@@ -197,9 +201,9 @@ showDescriptionContainer.addEventListener('submit', (event) => {
 
 	const descriptionData = {
 		description: {
-			title: event.target['title'].value,
+			// title: event.target['title'].value,
 			content: event.target['content'].value,
-			owner: event.target['owner'].value,
+			// owner: event.target['owner'].value,
 		},
 	}
 

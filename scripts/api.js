@@ -16,7 +16,7 @@ export const signIn = (data) => {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
         })
@@ -37,7 +37,7 @@ export const createCar = (data) =>{
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authirization': `Bearer ${store.userToken}`,
+            'Authorization': `Bearer ${store.userToken}`,
         },
         body: JSON.stringify(data)
     })
@@ -57,7 +57,7 @@ export const updateCar = (data, id) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authirization': `Bearer ${store.userToken}`,
+            'Authorization': `Bearer ${store.userToken}`,
         },
         body: JSON.stringify(data)
     })
@@ -67,20 +67,20 @@ export const deleteCar = (id) => {
     return fetch(`http://localhost:8000/cars/${id}`, {
         method: 'DELETE',
         headers: {
-            'Authirization': `Bearer ${store.userToken}`,
+            'Authorization': `Bearer ${store.userToken}`,
         },
     })
 }
 
 
-// export const indexDescription = () =>{
-//     return fetch('http://localhost:8000/descriptions',{
-//         headers: {
-// 			'Authorization': `Bearer ${store.userToken}`
-// 		},
-//     })
+export const indexDescription = () =>{
+    return fetch('http://localhost:8000/descriptions',{
+        headers: {
+			'Authorization': `Bearer ${store.userToken}`
+		},
+    })
     
-// }
+}
 
 export const createDescription = (data) =>{
     return fetch(`http://localhost:8000/descriptions`,{

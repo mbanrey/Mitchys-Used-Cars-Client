@@ -14,7 +14,7 @@
         <a href="" class="createCarHide">Create Car</a>
         <a href="" class="createDescriptionHide">Create Description</a>
     </nav>
-    <div id="auth-container">
+    <div id="auth-container" class="hide">
       <form id="sign-up-form-container">
         <input name="email" type="email" placeholder="email">
         <input name="password" type="password" placeholder="password">
@@ -26,12 +26,16 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    <div id="index-container"></div>
+    <div id="index-container" class="hide">  
+        <div id="index-car-container" class=" hide"></div>
+    </div>
   
-    <div id="index-car-container" class=" hide"></div>
-    <div id="index-description-container" class="hide"></div>
+    <div id="show-car-container">
+
+        </div>
+    <!-- <div id="index-description-container" class="hide"></div> -->
     <div id="message-container"></div>
-    <div id="show-car-container"></div>
+  
     <div id="show-description-container"></div>
 
     <form id="create-car-form" class="hide" action="">
@@ -41,13 +45,12 @@
         <input type="number" name="drive" placeholder="drive">
         <input type="number" name="miles" placeholder="miles">
         <input type="submit"  value="Create Car" id="create">
-        <form id="create-description-form" class="hide" action="">
+        
+    </form>
+    <form id="create-description-form" class="hide" action="">
         <input type="text" name="title" placeholder="title">
         <input type="text" name="content" id="content" placeholder="description">
-        <input type="text" name="owner" placeholder="email">
         <input type="submit" value="Create Description" id="create2">
     </form>
-    </form>
-    
 </body>
 </html>
