@@ -1,0 +1,96 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    align-self: center;
+    align-content: center;
+    background-color: antiquewhite;
+}
+div{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    align-self: center;
+}
+button{
+    width: fit-content;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    align-self: center;
+    margin: 10px;
+}
+button:hover{
+    background-color: black;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    max-width: 80%;
+}
+p{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+h3{
+    display: flex;
+    justify-content: center;
+}
+#update{
+    width: fit-content;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    align-self: center;
+    margin: 10px;
+}
+#update:hover{
+    background-color: black;
+}
+#create{
+    width: fit-content;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    align-self: center;
+    margin: 10px;
+}
+#create:hover{
+    background-color: black;
+}
+/* .hide{
+    display:none;
+} */
+#create2{
+    width: fit-content;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    align-self: center;
+    margin: 10px;
+}
+#create2:hover{
+    background-color: black;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+    margin: 20px;
+    color: red;
+}
+a:hover{
+    color: black;
+}
