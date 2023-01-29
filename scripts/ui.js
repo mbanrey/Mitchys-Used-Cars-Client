@@ -1,7 +1,7 @@
 import { store } from './store.js'
 
 const indexCarContainer = document.querySelector('#index-car-container')
-const indexDescriptionContainer = document.querySelector('#index-description-container')
+// const indexDescriptionContainer = document.querySelector('#index-description-container')
 const messageContainer = document.querySelector('#message-container')
 const showCarContainer = document.querySelector('#show-car-container')
 const showDescriptionContainer = document.querySelector('#show-description-container')
@@ -24,19 +24,19 @@ export const onIndexCarSuccess = (car) => {
     })
 }
 
-export const onIndexDescriptionSuccess = (description) => {
-    description.forEach(description =>{
-                const div = document.createElement('div')
-                div.innerHTML = `
-                <h3>${description.title}<h3>
-                <button data-id="${description._id}">Show Description</button>
-                `
+// export const onIndexDescriptionSuccess = (description) => {
+//     description.forEach(description =>{
+//                 const div = document.createElement('div')
+//                 div.innerHTML = `
+//                 <h3>${description.title}<h3>
+//                 <button data-id="${description._id}">Show Description</button>
+//                 `
     
 
-                indexDescriptionContainer.appendChild(div)
+//                 indexDescriptionContainer.appendChild(div)
                 
-            })
-}
+//             })
+// }
 
 export const onFailure = (error) =>{
     messageContainer.innerHTML = `
@@ -75,7 +75,7 @@ export const onShowCarSuccess = (car) => {
 
         <button type="button" data-id="${car._id}">Delete Car</button>
     `
-    // indexDescriptionContainer.classList.add('hide')
+    indexDescriptionContainer.classList.add('hide')
     indexCarContainer.classList.add('hide')
     showCarContainer.appendChild(div)
 }
