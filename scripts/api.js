@@ -1,5 +1,5 @@
 import{ store } from './store.js'
-
+//User
 export const signUp = (data) => {
     return fetch('http://localhost:8000/sign-up',{
         method: 'POST',
@@ -21,7 +21,7 @@ export const signIn = (data) => {
             body: JSON.stringify(data),
         })
 }
-
+//Car
 export const indexCar = () =>{
     return fetch('http://localhost:8000/cars',{
         headers: {
@@ -71,17 +71,7 @@ export const deleteCar = (id) => {
         },
     })
 }
-
-
-export const indexDescription = () =>{
-    return fetch('http://localhost:8000/descriptions',{
-        headers: {
-			'Authorization': `Bearer ${store.userToken}`
-		},
-    })
-    
-}
-
+//Description
 export const createDescription = (data) =>{
     return fetch(`http://localhost:8000/descriptions`,{
         method:'POST',
@@ -95,16 +85,8 @@ export const createDescription = (data) =>{
     })
 }
 
-export const showDescription = (id) =>{
-    return fetch(`http://localhost:8000/description/${id}`,{
-        headers: {
-			'Authorization': `Bearer ${store.userToken}`
-		},
-    })
-}
-
-export const updateDescription = (data, id) => {
-    return fetch(`http://localhost:8000/description/${id}`, {
+export const updateDescription = (data, descriptionId) => {
+    return fetch(`http://localhost:8000/descriptions/${descriptionId}`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json',
@@ -115,8 +97,8 @@ export const updateDescription = (data, id) => {
     })
 }
 
-export const deleteDescription = (id) => {
-    return fetch(`http://localhost:8000/description/${id}`, {
+export const deleteDescription = (carId,descriptionId) => {
+    return fetch(`http://localhost:8000/descriptions/${descriptionId}${carId}`, {
         method: 'DELETE',
         headers: {
 			'Authorization': `Bearer ${store.userToken}`
