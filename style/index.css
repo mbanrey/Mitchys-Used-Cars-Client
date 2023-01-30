@@ -12,8 +12,10 @@ body{
     justify-content: center;
     max-width: 100%;
     align-self: center;
-    align-content: center;
+    align-content: left;
     background-color: antiquewhite;
+    border: 3px soild black;
+    
 }
 div{
     display:flex;
@@ -48,10 +50,10 @@ p{
     justify-self: center;
     align-self: center;
 }
-h3{
+/* h3{
     display: flex;
     justify-content: center;
-}
+} */
 #update{
     width: fit-content;
     border: none;
@@ -110,3 +112,8 @@ a:hover{
     border-radius: 10px;
     padding: 20px;
 }
+/* #index-car-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+} */
