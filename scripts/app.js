@@ -38,6 +38,7 @@ const carform = document.querySelector('.carform')
 const design = document.querySelector('.design ')
 const signOut = document.querySelector('.sO')
 const nav = document.querySelector('.navbar')
+
 authContainer.classList.remove('hide')
 indexCarContainer.classList.add('hide')
 // carCreateButton.classList.add('hide')
@@ -121,7 +122,7 @@ signInContainer.addEventListener('submit', (event) => {
     showCarContainer.addEventListener('submit', (event) => {
         event.preventDefault()
         const id = event.target.getAttribute('data-id')
-        // messageContainer.classList.remove('hide')
+        messageContainer.classList.remove('hide')
         const carData = {
             car: {
                 year: event.target['year'].value,

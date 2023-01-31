@@ -106,7 +106,7 @@ export const onShowCarSuccess = (car => {
      descriptionContainer.classList.remove('hide')
      createDescriptionContainer.classList.remove('hide')
      showCarContainer.classList.remove('hide')
-    
+     
 })
 
 export const onUpdateCarSuccess = () => {
