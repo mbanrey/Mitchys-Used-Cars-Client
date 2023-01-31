@@ -7,13 +7,22 @@
     <script type="module" src="./scripts/app.js" defer></script>
     <title>Mitchy-Used-Cars</title>
     <link rel="stylesheet" href="style/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    
+    <nav class="navbar hide">
+        <h2>Mitchy's Used Cars<span>___</span></h2>
+        <div class="nav">
         <a href="" class="browse">Browse</a>
         <a href="" class="cCB">Create Post</a>
+        <a href="" class="sO">Sign-Out</a>
+        </div>
     </nav>
     <div id="auth-container" class="hide">
+        <h2 class="title">Mitchy's Used Cars<span>___</span></h2>
         <form id="sign-up-form-container">
             <label for="email">Sign Up</label>
           <input name="email" type="email" placeholder="email">
@@ -37,6 +46,9 @@
         <div id="message-container"></div>
         <div class="carform hide">
         <form id="create-car-form" class="">
+            <p class="form-t">Create Used Car Post</p>
+            <label for="year">Year</label>
+            <input type="number" name="year" placeholder="year">
             <label for="make">Make</label>
             <input type="text" name="make" placeholder="make">
             <label for="model">Model</label>
@@ -51,10 +63,11 @@
         </form>
     </div>
         <div id="index-car-container" class=""></div>
+        <div class="design hide">
         <div id="show-car-container"></div>
         <div id="description-container"></div>
         <div id="create-description-container"></div>
-        
+        </div>
 
 </body>
 </html>

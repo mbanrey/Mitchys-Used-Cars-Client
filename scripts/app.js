@@ -12,6 +12,8 @@ import {
 } from "./api.js";
 import { 
 	onIndexCarSuccess, 
+    onUpdateFailure,
+    onDeleteFailure,
 	onFailure, 
 	onCreateCarSuccess, 
 	onShowCarSuccess,
@@ -33,7 +35,9 @@ const authContainer = document.querySelector('#auth-container')
 const browse = document.querySelector('.browse')
 const carCreateButton = document.querySelector('.cCB')
 const carform = document.querySelector('.carform')
-
+const design = document.querySelector('.design ')
+const signOut = document.querySelector('.sO')
+const nav = document.querySelector('.navbar')
 authContainer.classList.remove('hide')
 indexCarContainer.classList.add('hide')
 // carCreateButton.classList.add('hide')
@@ -76,7 +80,7 @@ signInContainer.addEventListener('submit', (event) => {
 		.catch(onFailure)
 })
 
-    // indexCar()
+    // indexCar()2
 	// .then((res) => res.json())
 	// .then(res => {
     //     console.log(res)
@@ -89,6 +93,7 @@ signInContainer.addEventListener('submit', (event) => {
     
         const carData = {
             car: {
+                year: event.target['year'].value,
                 make: event.target['make'].value,
                 model: event.target['model'].value,
                 class: event.target['class'].value,
@@ -115,11 +120,11 @@ signInContainer.addEventListener('submit', (event) => {
 
     showCarContainer.addEventListener('submit', (event) => {
         event.preventDefault()
-    
         const id = event.target.getAttribute('data-id')
-    
+        // messageContainer.classList.remove('hide')
         const carData = {
             car: {
+                year: event.target['year'].value,
                 make: event.target['make'].value,
                 model: event.target['model'].value,
                 class: event.target['class'].value,
@@ -134,17 +139,18 @@ signInContainer.addEventListener('submit', (event) => {
         updateCar(carData, id)
             // this function (onUpdateCarSuccess) does not need anything to run. NO params
             .then(onUpdateCarSuccess)
-            .catch(onFailure)
+            .catch(onUpdateFailure)
     })
 
     showCarContainer.addEventListener('click', (event) => {
         const id = event.target.getAttribute('data-id')
-    
+        // messageContainer.classList.remove('hide')
+
         if (!id) return
     
         deleteCar(id)
             .then(onDeleteCarSuccess)
-            .catch(onFailure)
+            .catch(onDeleteFailure)
     })
 
     createDescriptionContainer.addEventListener('submit', (event) =>{
@@ -177,7 +183,7 @@ signInContainer.addEventListener('submit', (event) => {
         }
         updateDescription(descriptionData, id)
         .then(onUpdateCarSuccess)
-        .catch(onFailure)
+        .catch(onUpdateFailure)
     })
 
     descriptionContainer.addEventListener('click', (event)=>{
@@ -189,18 +195,19 @@ signInContainer.addEventListener('submit', (event) => {
 
         deleteDescription(carId, descriptionId)
         .then(onDeleteCarSuccess)
-        .catch(onFailure)
+        .catch(onDeleteFailure)
     })
 
     carCreateButton.addEventListener('click', (event)=>{
         event.preventDefault()
-
+        design.classList.add('hide')
         carform.classList.remove('hide')
         indexCarContainer.classList.add('hide')
         showCarContainer.classList.add('hide')
         descriptionContainer.classList.add('hide')
         createDescriptionContainer.classList.add('hide')
         messageContainer.classList.add('hide')
+        
     })
 
     browse.addEventListener('click', (event)=>{
@@ -209,16 +216,34 @@ signInContainer.addEventListener('submit', (event) => {
         while(indexCarContainer.firstChild){
         indexCarContainer.removeChild(indexCarContainer.lastChild)
             }
-
+        design.classList.add('hide')
         indexCarContainer.classList.remove('hide')
         carform.classList.add('hide')
         showCarContainer.classList.add('hide')
         descriptionContainer.classList.add('hide')
         createDescriptionContainer.classList.add('hide')
         messageContainer.classList.add('hide')
+        
         indexCar()
 		.then((res) => res.json())
 		.then((res) => onIndexCarSuccess(res.cars))
 		.catch(onFailure)
+    })
+
+    signOut.addEventListener('click', (event) =>{
+        event.preventDefault()
+            nav.classList.add('hide')
+            indexCarContainer.classList.add('hide')
+            authContainer.classList.remove('hide')
+            descriptionContainer.classList.add('hide')
+            createDescriptionContainer.classList.add('hide')
+            carform.classList.add('hide')
+            createDescriptionContainer.classList.add('hide')
+            messageContainer.classList.add('hide')
+            indexCarContainer.classList.add('hide')
+            carform.classList.add('hide')
+            showCarContainer.classList.add('hide')
+            design.classList.add('hide')
+        
     })
 
