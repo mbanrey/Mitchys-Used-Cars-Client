@@ -135,11 +135,12 @@ export const onSignInSuccess = (userToken) => {
 }
 
 export const onUpdateFailure = (error)=>{
+    if(error === 401){
     messageContainer.innerHTML = `
     <h3>Unauthorized Update</h3>
     <p>${error}</p>
     `
-    
+    }
 }
 
 export const onDeleteFailure = (error)=>{
