@@ -8,17 +8,30 @@
 
 ## Wire Frame
 
-![WireFrame](image1.jpg)
+![SignIn](signin.png)
+![Browse](browse.png)
+![Car Details](details.png)
+![Create Car Post](create.png)
 
 ## E.R.D.(Entity Relationship Diagram )
 
-![ERD](image2.jpg)
+![ERD](image2.png)
 
-## MVP
+## Technologies Use
 
-1. As a user I would like to sign up for Mitchys Used Cars app
-2. As a user I would like to be able to sign in to Mitchys Used Cars
-3. As a user I would like to create, view, update, and delete my car postings
+1. HTML
+2. Javascript
+3. CSS
+4. Node.js
+5. NPM
+6. Bcrypt
+7. Passport/Passport-jwt
+8. CORS
+9. MIRO
+10. Mongoose
+11. MongoDB
+12. JSONWENTOKEN
+13. Express
 
 ## User Story V2
 
