@@ -22,7 +22,7 @@ export const onIndexCarSuccess = (car) => {
         <h3>${car.year} ${car.make.toUpperCase()} ${car.model.toUpperCase()}</h3>
         <button type="button" class="btn btn-primary" data-id="${car._id}">Show Car</button>
         `
-        // indexCarContainer.classList.remove('hide')
+        
         indexCarContainer.appendChild(div)
     })
 }

@@ -1,11 +1,4 @@
-/* #create-car-form{
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-}
-.hide{
-    display: none;
-} */
+
 body{
     display: flex;
     flex-direction: column;
@@ -51,10 +44,7 @@ p{
     align-self: center;
     
 }
-/* h3{
-    display: flex;
-    justify-content: center;
-} */
+
 #update{
     width: fit-content;
     border: none;

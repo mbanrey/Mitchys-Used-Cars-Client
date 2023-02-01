@@ -41,7 +41,7 @@ const nav = document.querySelector('.navbar')
 
 authContainer.classList.remove('hide')
 indexCarContainer.classList.add('hide')
-// carCreateButton.classList.add('hide')
+
 browse.classList.add('hide')
 carCreateButton.classList.add('hide')
 
@@ -81,13 +81,7 @@ signInContainer.addEventListener('submit', (event) => {
 		.catch(onFailure)
 })
 
-    // indexCar()2
-	// .then((res) => res.json())
-	// .then(res => {
-    //     console.log(res)
-    //     onIndexCarSuccess(res.cars)
-    // })
-	// .catch(onFailure)
+  
 
     createCarForm.addEventListener('submit', (event) =>{
         event.preventDefault()
@@ -110,7 +104,7 @@ signInContainer.addEventListener('submit', (event) => {
 
     indexCarContainer.addEventListener('click', (event) =>{
         const id = event.target.getAttribute('data-id')
-        // console.log(id)
+     
         if (!id) return
     
         showCar(id)
@@ -145,7 +139,7 @@ signInContainer.addEventListener('submit', (event) => {
 
     showCarContainer.addEventListener('click', (event) => {
         const id = event.target.getAttribute('data-id')
-        // messageContainer.classList.remove('hide')
+       
 
         if (!id) return
     
